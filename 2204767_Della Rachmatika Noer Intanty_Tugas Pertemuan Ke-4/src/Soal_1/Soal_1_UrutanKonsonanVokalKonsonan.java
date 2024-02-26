@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author DELLA
  */
-
+import java.util.Scanner;
 
 public class Soal_1_UrutanKonsonanVokalKonsonan {
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Soal_1_UrutanKonsonanVokalKonsonan {
             char char3 = userInput.charAt(2);
 
             if (isLowerCaseLetter(char1) && isLowerCaseLetter(char2) && isLowerCaseLetter(char3)) {
-                if (isConsonant(char1) && char2 == 'a' && isConsonant(char3)) {
+                if (isConsonant(char1) && isVowel(char2) && isConsonant(char3)) {
                     System.out.println("Urutan Konsonan-Vokal-Konsonan");
                 } else {
                     System.out.println("Bukan Urutan Konsonan-Vokal-Konsonan");
@@ -46,5 +46,9 @@ public class Soal_1_UrutanKonsonanVokalKonsonan {
 
     private static boolean isConsonant(char c) {
         return "bcdfghjklmnpqrstvwxyz".indexOf(c) != -1;
+    }
+
+    private static boolean isVowel(char c) {
+        return "aeiou".indexOf(c) != -1;
     }
 }
